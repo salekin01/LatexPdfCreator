@@ -2,8 +2,13 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0-windows</TargetFramework>
+    <!--<TargetFramework>net5.0-windows</TargetFramework>-->
+    <TargetFramework>net4.8</TargetFramework>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="jacobslusser.ScintillaNET" Version="3.6.3" />
+  </ItemGroup>
 
 </Project>
