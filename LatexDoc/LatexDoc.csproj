@@ -11,4 +11,10 @@
     <PackageReference Include="jacobslusser.ScintillaNET" Version="3.6.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="LatexDocument">
+      <HintPath>lib\LatexDocument.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
