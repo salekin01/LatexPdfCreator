@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace LatexDoc_Console
 {
@@ -8,7 +9,9 @@ namespace LatexDoc_Console
         {
             Console.WriteLine("Welcome to latex pdf generator!");
             PdfGenerator pdfGenerator = new PdfGenerator(@"C:\Users\salekin\AppData\Local\Programs\MiKTeX\miktex\bin\x64\pdflatex.exe", @"D:\Latex\");
-            pdfGenerator.CreatePdf();
+
+            List<string> listOfItems = new List<string>(){ @"C:\Users\salekin\Desktop\ExtinctCoder.jpg" };
+            pdfGenerator.CreatePdf(listOfItems);
         }
     }
 }
