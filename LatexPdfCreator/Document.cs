@@ -569,7 +569,7 @@ namespace LatexPdfCreator
             Debug.WriteLine("Compiler Exit Code: " + p.ExitCode);
 
             if (p.ExitCode == 0 && OpenAfterCompile)
-                Process.Start(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Path.Combine(FILE_FOLDER, string.Format("{0}.pdf", FileName))));
+                Process.Start(new ProcessStartInfo(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Path.Combine(FILE_FOLDER, string.Format("{0}.pdf", FileName)))) { UseShellExecute = true });
         }
 
         /// <summary>
