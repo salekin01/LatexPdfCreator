@@ -5,7 +5,11 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LatexDocument", "LatexDocument\LatexDocument.csproj", "{5384B1E5-5479-4637-8F84-C6B9557CA154}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LatexDoc_Console", "LatexDoc_Console\LatexDoc_Console.csproj", "{EA566092-880C-407D-9066-220DD89231FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LatexPdfCreatorTest", "LatexPdfCreatorTest\LatexPdfCreatorTest.csproj", "{EA566092-880C-407D-9066-220DD89231FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LatexPdfCreator", "LatexPdfCreator\LatexPdfCreator.csproj", "{BF87C9BE-CB12-499C-9F2F-34E46C920C4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LatexDocumentTest", "LatexDocumentTest\LatexDocumentTest.csproj", "{5C73BB04-98B2-45E1-8AB2-D9E8359374EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{EA566092-880C-407D-9066-220DD89231FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA566092-880C-407D-9066-220DD89231FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA566092-880C-407D-9066-220DD89231FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF87C9BE-CB12-499C-9F2F-34E46C920C4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF87C9BE-CB12-499C-9F2F-34E46C920C4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF87C9BE-CB12-499C-9F2F-34E46C920C4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF87C9BE-CB12-499C-9F2F-34E46C920C4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C73BB04-98B2-45E1-8AB2-D9E8359374EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C73BB04-98B2-45E1-8AB2-D9E8359374EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C73BB04-98B2-45E1-8AB2-D9E8359374EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C73BB04-98B2-45E1-8AB2-D9E8359374EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

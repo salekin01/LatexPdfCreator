@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace LatexDoc_Console
+namespace LatexPdfCreatorTest
 {
     public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to latex pdf generator!");
+            Console.WriteLine("Welcome to latex pdf generator using .net core 5.0!");
             PdfGenerator pdfGenerator = new PdfGenerator(@"C:\Users\salekin\AppData\Local\Programs\MiKTeX\miktex\bin\x64\pdflatex.exe", @"D:\Latex\");
 
             List<string> listOfItems = new List<string>(){ @"C:\Users\salekin\Desktop\ExtinctCoder.jpg" };

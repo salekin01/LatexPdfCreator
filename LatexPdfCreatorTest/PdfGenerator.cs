@@ -1,14 +1,12 @@
-﻿using LatexDocument;
-using ScintillaNET;
+﻿using LatexPdfCreator;
 using System.Collections.Generic;
 using System.Drawing;
 
-namespace LatexDoc_Console
+namespace LatexPdfCreatorTest
 {
     public class PdfGenerator
     {
-        private LatexDocument.Document lt;
-        private Scintilla TextArea;
+        private LatexPdfCreator.Document lt;
         private string _laTeXExecutable;
         private string _saveInDirectory;
         private string _loremIpsum ="Lorem ipsum dolor sit amet, consectetur adipiscing elit.Donec orci tortor, tempus at vulputate vel, cursus vitae quam.Aliquam tincidunt eget odio id posuere. Donec rhoncus consectetur erat, sed tempus erat interdum a.Aliquam dictum imperdiet massa non vestibulum. Quisque rutrum ligula non nisl maximus fringilla.Proin condimentum fermentum accumsan. Morbi venenatis eros sed mi fermentum efficitur.Donec auctor, diam nec gravida egestas, magna libero interdum enim, at venenatis justo libero sed lectus. Nullam lectus nibh, porttitor ut turpis cursus, eleifend iaculis augue.Vivamus mollis, eros nec sagittis accumsan, quam ipsum hendrerit erat, eget fringilla ante nunc sed metus. Sed hendrerit dui ut ultrices faucibus. Nulla velit turpis, pretium a nibh sit amet, dapibus suscipit magna.Sed feugiat a sapien vitae pellentesque. Nam et dolor nec magna ultrices lobortis.Nulla gravida lobortis magna bibendum volutpat.";
@@ -20,16 +18,8 @@ namespace LatexDoc_Console
         }
         public void CreatePdf(List<string> fullPathOfItems)
         {
-            TextArea = new Scintilla();
-
-            // INITIAL VIEW CONFIG
-            TextArea.WrapMode = WrapMode.None;
-            TextArea.IndentationGuides = IndentView.LookBoth;
-
-            InitNumberMargin();
-
             //lt = new LatexDocument.Document(@"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\pdflatex.exe", @"D:\Latex\");
-            lt = new LatexDocument.Document(_laTeXExecutable, _saveInDirectory);
+            lt = new LatexPdfCreator.Document(_laTeXExecutable, _saveInDirectory);
 
 
             /****page1****/
@@ -180,16 +170,15 @@ namespace LatexDoc_Console
             plot.LineColor = "blue";
             plot.MarksStyle = "square";
 
-            
-            System.Windows.Point[] coordinates = new System.Windows.Point[8];
-            coordinates[0] = new System.Windows.Point(0, 23.1);
-            coordinates[1] = new System.Windows.Point(10, 27.5);
-            coordinates[2] = new System.Windows.Point(20, 32);
-            coordinates[3] = new System.Windows.Point(30, 37.8);
-            coordinates[4] = new System.Windows.Point(40, 44.6);
-            coordinates[5] = new System.Windows.Point(60, 61.8);
-            coordinates[6] = new System.Windows.Point(80, 83.8);
-            coordinates[7] = new System.Windows.Point(100, 114);
+            Point[] coordinates = new Point[8];
+            coordinates[0] = new Point(0, 23);
+            coordinates[1] = new Point(10, 27);
+            coordinates[2] = new Point(20, 32);
+            coordinates[3] = new Point(30, 37);
+            coordinates[4] = new Point(40, 44);
+            coordinates[5] = new Point(60, 61);
+            coordinates[6] = new Point(80, 83);
+            coordinates[7] = new Point(100, 114);
 
             plot.Coordinates = coordinates; 
             plot.Legend = @"CuSO$_4\cdot$5H$_2$O";
@@ -216,47 +205,7 @@ namespace LatexDoc_Console
             lt.Add(plotGraph2);
             /****End of page6****/
 
-            TextArea.Text = lt.ToString();
-            lt.CreatePdf("Test1", true);
-        }
-
-        #region Numbers, Bookmarks, Code Folding
-
-        /// <summary>
-        /// the background color of the text area
-        /// </summary>
-        private const int BACK_COLOR = 0xB7B7B7;
-
-        /// <summary>
-        /// default text color of the text area
-        /// </summary>
-        private const int FORE_COLOR = 0x2A211C;
-
-        /// <summary>
-        /// change this to whatever margin you want the line numbers to show in
-        /// </summary>
-        private const int NUMBER_MARGIN = 1;
-
-        #endregion
-
-        private void InitNumberMargin()
-        {
-
-            TextArea.Styles[ScintillaNET.Style.LineNumber].BackColor = IntToColor(BACK_COLOR);
-            TextArea.Styles[ScintillaNET.Style.LineNumber].ForeColor = IntToColor(FORE_COLOR);
-            TextArea.Styles[ScintillaNET.Style.IndentGuide].ForeColor = IntToColor(FORE_COLOR);
-            TextArea.Styles[ScintillaNET.Style.IndentGuide].BackColor = IntToColor(BACK_COLOR);
-
-            var nums = TextArea.Margins[NUMBER_MARGIN];
-            nums.Width = 30;
-            nums.Type = MarginType.Number;
-            nums.Sensitive = true;
-            nums.Mask = 0;
-        }
-
-        public static Color IntToColor(int rgb)
-        {
-            return Color.FromArgb(255, (byte)(rgb >> 16), (byte)(rgb >> 8), (byte)rgb);
+            lt.CreatePdf("Test2", true);
         }
     }
 }
