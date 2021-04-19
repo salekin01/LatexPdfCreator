@@ -2,7 +2,7 @@
 using ScintillaNET;
 using System.Drawing;
 
-namespace LatexDoc
+namespace LatexDoc_Console
 {
     public class PdfGenerator
     {

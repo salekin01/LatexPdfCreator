@@ -10,7 +10,7 @@ namespace LatexDoc
         public MainWindow()
         {
             InitializeComponent();
-            PdfGenerator pdfGenerator = new PdfGenerator();
+            PdfGenerator pdfGenerator = new PdfGenerator(@"C:\Users\salekin\AppData\Local\Programs\MiKTeX\miktex\bin\x64\pdflatex.exe", @"D:\Latex\");
             pdfGenerator.CreatePdf();
         }
 
