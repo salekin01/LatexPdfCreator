@@ -12,9 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="LatexDocument">
-      <HintPath>lib\LatexDocument.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\LatexDocument\LatexDocument.csproj" />
   </ItemGroup>
 
 </Project>
